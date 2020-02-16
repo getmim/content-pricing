@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'content-pricing',
-    '__version' => '0.0.1',
+    '__version' => '0.0.2',
     '__git' => 'git@github.com:getmim/content-pricing.git',
     '__license' => 'MIT',
     '__author' => [
@@ -35,9 +35,7 @@ return [
     ],
     'libEnum' => [
         'enums' => [
-            'content-pricing.type' => [
-                'post' => 'Post'
-            ]
+            'content-pricing.type' => []
         ]
     ],
     'libFormatter' => [
@@ -87,5 +85,8 @@ return [
             ]
         ]
     ],
-    'contentPricing' => []
+    'contentPricing' => [
+        'objects' => [],
+        'active' => []
+    ]
 ];
