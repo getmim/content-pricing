@@ -63,10 +63,16 @@ class Pricing extends \Mim\Model
         if($user)
             $sql.= " AND `o`.`$o_f_user` = '$user'";
 
-        $sql.= " ORDER BY `o`.`$o_f_id` DESC LIMIT ";
-        if($page>1)
-            $sql.= $page-1;
-        $sql.= $rpp;
+        $sql.= " ORDER BY `o`.`$o_f_id` DESC ";
+        if ($rpp) {
+            $sql.= ' LIMIT ' . $rpp;
+            $offset = 0;
+
+            $page--;
+            $offset = $page * $rpp;
+            if($offset)
+                $sql.= ' OFFSET ' . $offset;
+        }
 
         return self::query($sql, 'read') ?? [];
     }
