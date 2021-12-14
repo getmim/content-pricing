@@ -75,6 +75,13 @@ return [
                 ],
                 'index' => 11000
             ]
+        ],
+        'indexes' => [
+            'by_object' => [
+                'fields' => [
+                    'object' => []
+                ]
+            ]
         ]
     ]
 ];
